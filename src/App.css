@@ -1,3 +1,20 @@
+body {
+  padding-bottom: 50px;
+}
+
+.clear-book {
+  text-align: right;
+  color: red;
+  font-weight: bold;
+}
+
+.clear-book:hover {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  cursor: pointer;
+}
 
 .header-container {
   background-image: url('/img/open_book_cropped.jpeg');
@@ -39,6 +56,12 @@ nav {
   cursor: pointer;
  
 }
+
+.selected {
+  background-color: rgb(223, 220, 220);
+  color: rgb(86,91,94);
+}
+
 .search-container {
   display: inline;
   flex-direction: row;
