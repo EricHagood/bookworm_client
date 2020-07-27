@@ -5,10 +5,12 @@ export default class HomeView extends Component {
     render() {
         return (this.props.books.map( (book, index) => {
             return(<div className='column-container' key={index}>
-              <div className='book-container' onClick={ () => { this.props.clickOnBook(book) } }>
+              <div className='book-container'>
+                <div className="clickable" onClick={ () => { this.props.clickOnBook(book) } }>
                 <p className='book-text'>Title: {book.title}</p>
                 <p className='book-text'>Authors: { book.authors.toString() }</p>        
                 <img src = {book.thumbnail} className="thumbnail" alt="books"></img>
+                </div>
               
              <div className='button-container'>
               {
