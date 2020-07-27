@@ -26,7 +26,7 @@ body {
 
 }
 .main-title {
-  font-size: 72pt;
+  font-size: 10vw;
   color: rgb(223, 220, 220);
   margin-top: 0;
 }
@@ -137,7 +137,7 @@ margin-top: 10px;
 }
 .search-results-title {
   color: rgb(86,91,94);
-  margin-left: 250px;
+  margin-left: 18vw;
   margin-bottom: 0px;
   margin-top: 50px
 }
@@ -221,4 +221,55 @@ font-size: 14pt;
   cursor: pointer;
   margin-top: 7px;
 }
+@media only screen and (max-width: 800px) {
+.nav-item {
+padding: 0px;
+margin-right: 10px;
+}
+.search-container {
+  margin-left: 0;
+
+}
+.nav-container {
+  height: 70px;
+}
+.search-box {
+  width: 80%;
+  margin-right:0;
+}
+.search-results-title {
+  margin-left: 28vw;
+}
+.column-container {
+  margin: auto
+}
+.view-container, .collection-container, .add-container {
+  max-width: 300px;
+}
+.main-title {
+  padding-top: 0px;
+  padding-left: 10px;
+  font-size: 15vw;
+}
+.input-container {
+  width: 60%;
+  margin-right: auto;
+}
+.add-form {
+  justify-content: left;
+}
+.form-button {
+  margin-left: 15vw;
+}
+}
+
+@media only screen and (max-width: 400px) {
+  .search-results-title{
+    margin-left: 7vw;
+  }
+  .form-button {
+    margin-left: 30vw;
+  }
+}
+
 
