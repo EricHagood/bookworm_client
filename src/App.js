@@ -11,7 +11,7 @@ import HomeView from './components/HomeView';
 import Search from './components/Search'
 import SearchView from './components/SearchView'
 
-let baseUrl = 'http://localhost:3003'
+let baseUrl = 'https://blooming-stream-08940.herokuapp.com/'
 export default class App extends Component {  
   constructor() {
     super();
@@ -29,7 +29,7 @@ export default class App extends Component {
   }
 
   getBook() {
-    fetch('http://localhost:3003/bookworm').then(response => {
+    fetch(baseURL + 'bookworm').then(response => {
       return response.json();
     }).then(data => {
       this.setState({
@@ -49,7 +49,7 @@ export default class App extends Component {
   }
 
   updateBook = (updateBook, index) => {
-    fetch('http://localhost:3003/bookworm/' + updateBook._id, {
+    fetch(baseURL +  'bookworm/' + updateBook._id, {
       method: 'PUT',
       body: JSON.stringify({
         title: updateBook.title,
@@ -77,7 +77,7 @@ export default class App extends Component {
 
   addBookFromApi = (book) => {
     console.log(book)
-    fetch('http://localhost:3003/bookworm/', {
+    fetch(baseURL + 'bookworm/', {
         method: 'POST',
         body: JSON.stringify({
           title: book.volumeInfo.title,
@@ -101,7 +101,7 @@ export default class App extends Component {
 
 
   deleteBook = (deleteBook, index) => {
-    fetch('http://localhost:3003/bookworm/' + deleteBook._id, {
+    fetch(baseURL + 'bookworm/' + deleteBook._id, {
       method: 'DELETE',
      
       headers: {
