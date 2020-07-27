@@ -11,7 +11,6 @@ import HomeView from './components/HomeView';
 import Search from './components/Search'
 import SearchView from './components/SearchView'
 
-let baseUrl = 'https://blooming-stream-08940.herokuapp.com/'
 export default class App extends Component {  
   constructor() {
     super();
@@ -19,7 +18,7 @@ export default class App extends Component {
       books: [],
       clickedBook: null,
       currentView : 'home', // home, collection, favorite
-
+      baseUrl: 'https://blooming-stream-08940.herokuapp.com/'
     };
     this.recieveBooks = this.recieveBooks.bind(this)
   }
@@ -29,7 +28,7 @@ export default class App extends Component {
   }
 
   getBook() {
-    fetch(baseURL + 'bookworm').then(response => {
+    fetch(this.state.baseUrlbaseURL + 'bookworm').then(response => {
       return response.json();
     }).then(data => {
       this.setState({
@@ -49,7 +48,7 @@ export default class App extends Component {
   }
 
   updateBook = (updateBook, index) => {
-    fetch(baseURL +  'bookworm/' + updateBook._id, {
+    fetch(this.state.baseUrlbaseURL +  'bookworm/' + updateBook._id, {
       method: 'PUT',
       body: JSON.stringify({
         title: updateBook.title,
@@ -77,7 +76,7 @@ export default class App extends Component {
 
   addBookFromApi = (book) => {
     console.log(book)
-    fetch(baseURL + 'bookworm/', {
+    fetch(this.state.baseUrlbaseURL + 'bookworm/', {
         method: 'POST',
         body: JSON.stringify({
           title: book.volumeInfo.title,
@@ -101,7 +100,7 @@ export default class App extends Component {
 
 
   deleteBook = (deleteBook, index) => {
-    fetch(baseURL + 'bookworm/' + deleteBook._id, {
+    fetch(this.state.baseUrlbaseURL + 'bookworm/' + deleteBook._id, {
       method: 'DELETE',
      
       headers: {
