@@ -28,7 +28,7 @@ export default class App extends Component {
   }
 
   getBook() {
-    fetch(this.state.baseUrlbaseURL + 'bookworm').then(response => {
+    fetch(this.state.baseUrl + 'bookworm').then(response => {
       return response.json();
     }).then(data => {
       this.setState({
@@ -48,7 +48,7 @@ export default class App extends Component {
   }
 
   updateBook = (updateBook, index) => {
-    fetch(this.state.baseUrlbaseURL +  'bookworm/' + updateBook._id, {
+    fetch(this.state.baseUrl +  'bookworm/' + updateBook._id, {
       method: 'PUT',
       body: JSON.stringify({
         title: updateBook.title,
@@ -76,7 +76,7 @@ export default class App extends Component {
 
   addBookFromApi = (book) => {
     console.log(book)
-    fetch(this.state.baseUrlbaseURL + 'bookworm/', {
+    fetch(this.state.baseUrl + 'bookworm/', {
         method: 'POST',
         body: JSON.stringify({
           title: book.volumeInfo.title,
@@ -100,7 +100,7 @@ export default class App extends Component {
 
 
   deleteBook = (deleteBook, index) => {
-    fetch(this.state.baseUrlbaseURL + 'bookworm/' + deleteBook._id, {
+    fetch(this.state.baseUrl + 'bookworm/' + deleteBook._id, {
       method: 'DELETE',
      
       headers: {
