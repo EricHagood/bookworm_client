@@ -153,7 +153,7 @@ export default class App extends Component {
             favorites.push(this.state.books[i])
           }
       }
-      return <div><h1 className='search-results-title'>Favorites</h1><FavoriteView books={favorites} clickOnBook={this.clickOnBook} /></div>
+      return <div><h1 className='search-results-title'>Favorites</h1><div className="view-container"><FavoriteView books={favorites} clickOnBook={this.clickOnBook} /></div></div>
     } else if (this.state.currentView === 'add') {
       return <div><h1 className='search-results-title'>Add Book</h1><NewForm baseUrl={ baseUrl } addBook={ this.addBook}/></div>
     }
