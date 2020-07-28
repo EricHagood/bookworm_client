@@ -12,7 +12,7 @@ export default class SeachView extends Component {
                 <img  src = {book.volumeInfo.imageLinks ? (
                     book.volumeInfo.imageLinks.thumbnail
                     ) : (
-                        '../../public/img/book_default_thumbnail.jpeg'
+                        'https://i.imgur.com/T8Valu4.jpg'
                     )} className="thumbnail" alt="books"></img>
                     <button className='book-add-button' onClick={()=> { this.props.addBookFromApi( book ) }}>Add to Collection</button>
               </div>

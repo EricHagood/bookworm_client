@@ -22,7 +22,7 @@ export default class NewForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        fetch(this.props.baseUrl + '/bookworm', {
+        fetch(this.props.baseUrl + 'bookworm', {
             method: 'POST',
             body: JSON.stringify({
                 title: this.state.title,
